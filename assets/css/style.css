@@ -2,7 +2,10 @@
     position:relative;
 }
 body{
-
+background-image: url(../img/topography/topography.png);
+}
+h1{
+    font-family: 'Press Start 2P', cursive;
 }
 
 /* Classes */
@@ -10,4 +13,12 @@ body{
 .calculator{
     display: none;
     margin: 0 auto;
+}
+
+/* ID's */
+
+#wrapper{
+    width: 75%;
+    margin: 0 auto;
+
 }
