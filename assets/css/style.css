@@ -1,0 +1,13 @@
+*{
+    position:relative;
+}
+body{
+
+}
+
+/* Classes */
+
+.calculator{
+    display: none;
+    margin: 0 auto;
+}
