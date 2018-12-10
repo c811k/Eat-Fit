@@ -3,9 +3,15 @@
 }
 body{
 background-image: url(../img/topography/topography.png);
+font-family: 'Lato', sans-serif;
 }
 h1{
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+
+td:hover{
+    text-shadow: black 1px 1px 3px;
 }
 
 /* Classes */
