@@ -10,15 +10,17 @@ h1{
     font-weight: 100;
 }
 
-td:hover{
-    text-shadow: black 1px 1px 3px;
-}
+
 
 /* Classes */
 
 .calculator{
-    display: none;
+   
     margin: 0 auto;
+}
+
+.clicked{
+display:none;
 }
 
 /* ID's */
@@ -27,4 +29,7 @@ td:hover{
     width: 75%;
     margin: 0 auto;
 
+}
+#wrapper td:hover{
+    text-shadow: black 1px 1px 3px;
 }
