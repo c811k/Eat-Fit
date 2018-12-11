@@ -5,7 +5,7 @@ var workout = $("<button>")
     .attr("id", "workout-category")
     .addClass("btn btn-info btn-sm")
     .attr("data-toggle", "modal")
-    .attr("data-target", "#exampleModalLong")
+    .attr("data-target", "#workout-modal")
     .text("Add Workout")
     .click(function() {
         return select = this;
@@ -35,7 +35,7 @@ $(".custom-select").on("change", function() {
                     .attr("title", results[i].name)
                     .attr("data-content", results[i].description)
                     .text(results[i].name)
-                    .popover("toggle")
+                    // .popover("toggle")
                 $("#workout-body").append(button);        
             }                
         }
