@@ -1,5 +1,6 @@
 $(document).ready(function ($) {
     $.noConflict();
+
     var buttonClicked;
     var currentRecipe;
     var buttonDiv = $("<button>")
@@ -57,13 +58,13 @@ $(document).ready(function ($) {
             }
 
             $("#save").on("click", function (e) {
+                $("#save").hide();
                 $('#exampleModalLong').modal('hide');
                 $(buttonClicked).text(selected);
                 $(buttonClicked).attr("data-recipe", JSON.stringify(data.hits[0].recipe));
                 $(buttonClicked).click(function (e) {
                     $(this).attr("data-target", "#exampleModalLong");
                         currentRecipe = {...JSON.parse($(this).attr("data-recipe"))};
-                        $("#save").show();
                         $("#food").empty();
                         $("#detail").html("<h5>" + selected + "</h5>");
                         $("#exampleModalLong").css({ "overflow": "auto" });
