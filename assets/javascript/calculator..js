@@ -274,6 +274,7 @@ if(sdss == null){alert("You are using a free package.\n You are not allowed to r
 
 $(".blue_button").on("click", function (){
     $(".clicked").css("display", "block");
+    $(".outter").css("display", "none");
 
 });
 
