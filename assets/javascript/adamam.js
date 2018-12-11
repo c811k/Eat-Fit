@@ -1,5 +1,6 @@
 $(document).ready(function ($) {
     $.noConflict();
+
     var buttonClicked;
     var currentRecipe;
     var buttonDiv = $("<button>")
@@ -14,6 +15,7 @@ $(document).ready(function ($) {
     $(".buttonDiv").append(buttonDiv);
 
     $("#run-search").on("click", function (event) {
+        $("#search").hide();
         $("#save").hide();
         $("#food").empty();
         $("#detail").empty();
@@ -36,6 +38,7 @@ $(document).ready(function ($) {
         }
     });
 
+    
     $("#food").on("click", "button", function (e) {
         var selected = $(this).data("name").trim();
         $.ajax({
@@ -57,13 +60,14 @@ $(document).ready(function ($) {
             }
 
             $("#save").on("click", function (e) {
+                $("#save").hide();
+                $("#search").show();
                 $('#exampleModalLong').modal('hide');
                 $(buttonClicked).text(selected);
                 $(buttonClicked).attr("data-recipe", JSON.stringify(data.hits[0].recipe));
                 $(buttonClicked).click(function (e) {
                     $(this).attr("data-target", "#exampleModalLong");
                         currentRecipe = {...JSON.parse($(this).attr("data-recipe"))};
-                        $("#save").show();
                         $("#food").empty();
                         $("#detail").html("<h5>" + selected + "</h5>");
                         $("#exampleModalLong").css({ "overflow": "auto" });
@@ -88,6 +92,10 @@ $(document).ready(function ($) {
     $("#run-search").on("click", function () {
         $('#exampleModalLong').modal('show');
     });
+    $("#search").on("click", function () {
+        $('#myModal1').modal('show');
+        $('#exampleModalLong').modal('hide');
+    });
     function clear() {
         $("#food").empty();
         $('#myModal1').modal('hide');
@@ -95,7 +103,8 @@ $(document).ready(function ($) {
         console.log("hello");
     }
 
-    $(".clear-all").on("click", clear);
-    
+    $("#clear-all").on("click", clear);
+    $("#clear").on("click", clear);
+
 
 });
