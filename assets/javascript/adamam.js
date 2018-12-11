@@ -5,8 +5,8 @@ $(document).ready(function ($) {
     var currentRecipe;
     var buttonDiv = $("<button>")
         .attr("type", "button")
-        .addClass("btn btn-primary btn-lg")
-        .text("add meal")
+        .addClass("btn btn-dark btn-lg")
+        .text("+")
         .attr("data-toggle", "modal")
         .attr("data-target", "#myModal1");
     buttonDiv.click(function (e) {

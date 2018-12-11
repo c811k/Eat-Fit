@@ -1,5 +1,5 @@
 
-.blue_button{
+/* .blue_button{
     background: none repeat scroll 0 0 #468CD2;
     border-bottom: 3px solid #3277BC;
     text-shadow: 1px 1px 0 #214D73;
@@ -10,7 +10,7 @@
     font-weight: bold;
     margin: 10px 0;
     padding: 7px 14px;
-}
+} */
 .frms input[type="text"], [type="password"], [type="file"], textarea, select {
     background: none repeat scroll 0 0 #fff;
     border: 1px solid #ddd;
