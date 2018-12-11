@@ -96,6 +96,6 @@ $(document).ready(function ($) {
     }
 
     $(".clear-all").on("click", clear);
-
+    
 
 });
