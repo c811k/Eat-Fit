@@ -1,5 +1,8 @@
-$(document).ready(function ($) {
-    $.noConflict();
+$(document).ready(function () {
+    var time;
+    var currentDay;
+
+
 
     var buttonClicked;
     var currentRecipe;
@@ -9,6 +12,13 @@ $(document).ready(function ($) {
         .text("+")
         .attr("data-toggle", "modal")
         .attr("data-target", "#myModal1");
+
+        $(".time").click(function(e){
+            console.log(e);
+            time = e.currentTarget.id;
+            currentDay = e.target.parentElement.className.substring(e.target.parentElement.className.length-3, e.target.parentElement.className.length);
+            console.log(time, currentDay);
+         })
     buttonDiv.click(function (e) {
         return buttonClicked = this;
     })
@@ -80,6 +90,7 @@ $(document).ready(function ($) {
                             $("#detail").append("<br>");
                             $("#detail").append((i + 1) + ". " + ingredients);
                         }   
+                        
                 })
             });
         })
@@ -105,6 +116,4 @@ $(document).ready(function ($) {
 
     $("#clear-all").on("click", clear);
     $("#clear").on("click", clear);
-
-
 });
