@@ -259,7 +259,7 @@ document.getElementById("l4").innerHTML="kilogram";
 }
 }
 else{
-alert("Please fill your details properly!");
+$(".fill").html("Please fill your details properly!");
 }
 }
 function chk(){
