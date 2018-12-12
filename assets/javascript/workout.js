@@ -3,7 +3,7 @@ var select;
 var workout = $("<button>")
     .attr("type", "button")
     .attr("id", "workout-category")
-    .addClass("btn btn-info btn-sm")
+    .addClass("btn blue_button btn-sm")
     .attr("data-toggle", "modal")
     .attr("data-target", "#workout-modal")
     .text("Add Workout")
@@ -29,7 +29,7 @@ $(".custom-select").on("change", function() {
             if(results[i].language === 2) {
                 var button = $("<button>")
                     .attr("type", "button")
-                    .addClass("btn btn-sm btn-outline-secondary btn-block")
+                    .addClass("btn btn-sm workout")
                     .attr("data-trigger", "hover")
                     .attr("data-toggle", "body")
                     .attr("title", results[i].name)

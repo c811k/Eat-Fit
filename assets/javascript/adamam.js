@@ -5,7 +5,7 @@ $(document).ready(function ($) {
     var currentRecipe;
     var buttonDiv = $("<button>")
         .attr("type", "button")
-        .addClass("btn btn-dark btn-lg")
+        .addClass("btn tabla")
         .text("+")
         .attr("data-toggle", "modal")
         .attr("data-target", "#myModal1");
