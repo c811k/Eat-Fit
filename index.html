@@ -222,35 +222,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="time" id="breakfast">
                         <td>Breakfast</td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
-                        <td><div class="buttonDiv"></div></td>
+                        <td><div class="buttonDiv mon"></div></td>
+                        <td><div class="buttonDiv tue"></div></td>
+                        <td><div class="buttonDiv wed"></div></td>
+                        <td><div class="buttonDiv thu"></div></td>
+                        <td><div class="buttonDiv fri"></div></td>
+                        <td><div class="buttonDiv sat"></div></td>
+                        <td><div class="buttonDiv sun"></div></td>
                     </tr>
-                    <tr>
+                    <tr class="time" id="lunch">
                         <td>Lunch</td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
+                        <td><div class="buttonDiv mon"></div></td>
+                        <td><div class="buttonDiv tue"></div></td>
+                        <td><div class="buttonDiv wed"></div></td>
+                        <td><div class="buttonDiv thu"></div></td>
+                        <td><div class="buttonDiv fri"></div></td>
+                        <td><div class="buttonDiv sat"></div></td>
+                        <td><div class="buttonDiv sun"></div></td>
                     </tr>
-                    <tr>
+                    <tr class="time" id="dinner">
                         <td>Dinner</td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
-                        <td><div class="buttonDiv"></td>
+                        <td><div class="buttonDiv mon"></div></td>
+                        <td><div class="buttonDiv tue"></div></td>
+                        <td><div class="buttonDiv wed"></div></td>
+                        <td><div class="buttonDiv thu"></div></td>
+                        <td><div class="buttonDiv fri"></div></td>
+                        <td><div class="buttonDiv sat"></div></td>
+                        <td><div class="buttonDiv sun"></div></td>
                     </tr>
                     <tr>
                         <td>Excercises</td>
@@ -268,7 +268,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                <button data-day="monday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -284,7 +284,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                 <button  data-day="tuesday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -300,7 +300,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                 <button  data-day="wednesday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -316,7 +316,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                <button  data-day="thursday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>    
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -332,7 +332,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                 <button  data-day="friday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -348,7 +348,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                 <button  data-day="saturday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -364,8 +364,18 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                    
+                                 <button  data-day="sunday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
+                    </tr>
+                    <tr>
+                        <td>selected</td>
+                        <td id="monday"></td>
+                        <td id="tuesday"></td>
+                        <td id="wednesday"></td>
+                        <td id="thursday"></td>
+                        <td id="friday"></td>
+                        <td id="saturday"></td>
+                        <td id="sunday"></td>
                     </tr>
                 </tbody>
             </table>

@@ -4,23 +4,49 @@ $(function () {
 })
 
 var select;
-var workout = $("<button>")
-    .attr("type", "button")
-    .attr("id", "workout-category")
-    .addClass("btn btn-info btn-sm")
-    .attr("data-toggle", "modal")
-    .attr("data-target", "#workout-modal")
-    .text("Add Workout")
-    .click(function() {
+var workout = $('.btn btn-info btn-sm').click(function() {
         return select = this;
     });
+    renderWorkouts();
 
-$(".workout-button").append(workout);
+    function getWorkouts() {
+        return JSON.parse(localStorage.getItem("myworkout"))
+    }
+
+    function renderWorkouts() {
+        var workouts = getWorkouts();
+        for (day in workouts) {
+            $(`#${day}`).text("");
+            workouts[day].forEach(workout => {
+                var div = $("<div>").text(workout)
+                $(`#${day}`).append(div); 
+            });
+        }
+    }
+ 
+
+var myWorkouts = {
+    monday:[],
+    tuesday:[],
+    wednesday:[],
+    thursday:[],
+    friday:[],
+    saturday:[],
+    sunday:[]
+}
+
+var currentSelectedDay;
+var currentSelectedType;
+
+
+$(".workout-category").click(function(){
+    currentSelectedDay = $(this).data("day");
+})
 
 $(".custom-select").on("change", function() {
     var category = $(this).val();
-    console.log(this);
-    console.log(category);
+    // console.log(this);
+    // console.log(category);
     var queryURL = "https://wger.de/api/v2/exercise/?category=" + category + "&status=2";
     
     $.ajax ({
@@ -29,6 +55,7 @@ $(".custom-select").on("change", function() {
     }).then(function(response) {
         $("#workout-body").empty();
         var results = response.results;
+        // console.log(results);
         for(var i =0; i <results.length; i++) {
             if(results[i].language === 2) {
                 var button = $("<button>")
@@ -45,12 +72,17 @@ $(".custom-select").on("change", function() {
 
         $(".btn.btn-sm.btn-outline-secondary.btn-block").on("click", function() {
             var type = $(this).text();
+            currentSelectedType = type;
             $("#workout-save").on("click", function() {
-                $(select).text(type);  
+                myWorkouts[currentSelectedDay].push(currentSelectedType);
+                myWorkouts[currentSelectedDay] = [...new Set(myWorkouts[currentSelectedDay])] // remove duplicates
+                localStorage.setItem("myworkout", JSON.stringify(myWorkouts));
+                renderWorkouts();
             });
         });
     });
 });
+
 
 
 
