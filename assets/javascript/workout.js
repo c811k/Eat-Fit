@@ -4,10 +4,11 @@ $(function () {
 })
 
 var select;
+var isEmpty = true;
 var workout = $('.btn btn-info btn-sm').click(function() {
         return select = this;
     });
-    renderWorkouts();
+
 
     function getWorkouts() {
         return JSON.parse(localStorage.getItem("myworkout"))
@@ -15,7 +16,11 @@ var workout = $('.btn btn-info btn-sm').click(function() {
 
     function renderWorkouts() {
         var workouts = getWorkouts();
-        for (day in workouts) {
+        console.log(workouts)
+        for (var day in workouts) {
+            if (workouts[day].length > 0){
+                isEmpty = false;
+            }
             $(`#${day}`).text("");
             workouts[day].forEach(workout => {
                 var div = $("<div>").text(workout)
@@ -23,7 +28,7 @@ var workout = $('.btn btn-info btn-sm').click(function() {
             });
         }
     }
- 
+
 
 var myWorkouts = {
     monday:[],
@@ -33,6 +38,11 @@ var myWorkouts = {
     friday:[],
     saturday:[],
     sunday:[]
+}
+
+renderWorkouts();
+if (!isEmpty) {
+    myWorkouts = getWorkouts();
 }
 
 var currentSelectedDay;
@@ -74,8 +84,10 @@ $(".custom-select").on("change", function() {
             var type = $(this).text();
             currentSelectedType = type;
             $("#workout-save").on("click", function() {
-                myWorkouts[currentSelectedDay].push(currentSelectedType);
-                myWorkouts[currentSelectedDay] = [...new Set(myWorkouts[currentSelectedDay])] // remove duplicates
+                console.log("pre", myWorkouts);
+                myWorkouts[currentSelectedDay].unshift(currentSelectedType);
+                myWorkouts[currentSelectedDay] = [...new Set(myWorkouts[currentSelectedDay])]
+                console.log("post", myWorkouts); // remove duplicates
                 localStorage.setItem("myworkout", JSON.stringify(myWorkouts));
                 renderWorkouts();
             });

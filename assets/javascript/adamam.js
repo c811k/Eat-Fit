@@ -1,9 +1,6 @@
 $(document).ready(function () {
     var time;
     var currentDay;
-
-
-
     var buttonClicked;
     var currentRecipe;
     var buttonDiv = $("<button>")
