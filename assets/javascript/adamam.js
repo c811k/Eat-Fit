@@ -1,5 +1,4 @@
-$(document).ready(function ($) {
-    $.noConflict();
+$(document).ready(function () {
 
     var buttonClicked;
     var currentRecipe;

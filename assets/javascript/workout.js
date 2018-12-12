@@ -1,3 +1,7 @@
+$(function () {
+    $('[data-toggle="popover"]').popover()
+  
+})
 
 var select;
 var workout = $("<button>")
@@ -31,11 +35,10 @@ $(".custom-select").on("change", function() {
                     .attr("type", "button")
                     .addClass("btn btn-sm btn-outline-secondary btn-block")
                     .attr("data-trigger", "hover")
-                    .attr("data-toggle", "body")
                     .attr("title", results[i].name)
                     .attr("data-content", results[i].description)
                     .text(results[i].name)
-                    // .popover("toggle")
+                    .popover("toggle")
                 $("#workout-body").append(button);        
             }                
         }
