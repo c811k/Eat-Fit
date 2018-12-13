@@ -10,15 +10,17 @@ $(document).ready(function () {
         .attr("data-toggle", "modal")
         .attr("data-target", "#myModal1");
 
-        $(".time").click(function(e){
-            console.log(e);
-            time = e.currentTarget.id;
-            currentDay = e.target.parentElement.className.substring(e.target.parentElement.className.length-3, e.target.parentElement.className.length);
-            console.log(time, currentDay);
-         })
+    $(".time").click(function(e){
+        console.log(e);
+        time = e.currentTarget.id;
+        currentDay = e.target.parentElement.className.substring(e.target.parentElement.className.length-3, e.target.parentElement.className.length);
+        console.log(time, currentDay);
+    })
+
     buttonDiv.click(function (e) {
         return buttonClicked = this;
     })
+
     $(".buttonDiv").append(buttonDiv);
 
     $("#run-search").on("click", function (event) {
@@ -29,6 +31,7 @@ $(document).ready(function () {
         if (userInput !== "") {
             var userInput = $("#search-term").val().trim();
             console.log(userInput);
+            
             $.ajax({
                 url: "https://api.edamam.com/search?q=" + userInput + "&app_id=19ca9465&app_key=deb24b5cfa66feacc7907e46eb56b09a&yield=1",
                 method: "GET"
@@ -45,9 +48,9 @@ $(document).ready(function () {
         }
     });
 
-    
     $("#food").on("click", "button", function (e) {
         var selected = $(this).data("name").trim();
+        
         $.ajax({
             url: "https://api.edamam.com/search?q=" + selected + "&app_id=19ca9465&app_key=deb24b5cfa66feacc7907e46eb56b09a",
             method: "GET"
@@ -74,20 +77,20 @@ $(document).ready(function () {
                 $(buttonClicked).attr("data-recipe", JSON.stringify(data.hits[0].recipe));
                 $(buttonClicked).click(function (e) {
                     $(this).attr("data-target", "#exampleModalLong");
-                        currentRecipe = {...JSON.parse($(this).attr("data-recipe"))};
-                        $("#food").empty();
-                        $("#detail").html("<h5>" + selected + "</h5>");
-                        $("#exampleModalLong").css({ "overflow": "auto" });
-                        $("#detail").append($("<img>").attr("src", currentRecipe.image));
+                    currentRecipe = {...JSON.parse($(this).attr("data-recipe"))};
+                    $("#food").empty();
+                    $("#detail").html("<h5>" + selected + "</h5>");
+                    $("#exampleModalLong").css({ "overflow": "auto" });
+                    $("#detail").append($("<img>").attr("src", currentRecipe.image));
+                    $("#detail").append("<br>");
+                    var cal = (currentRecipe.calories) / (currentRecipe.yield);
+                    $("#detail").append("Calories(per 1 serving) : " + cal.toFixed(2));
+                    
+                    for (let i = 0; i < currentRecipe.ingredients.length; i++) {
+                        var ingredients = currentRecipe.ingredients[i].text;
                         $("#detail").append("<br>");
-                        var cal = (currentRecipe.calories) / (currentRecipe.yield);
-                        $("#detail").append("Calories(per 1 serving) : " + cal.toFixed(2));
-                        for (let i = 0; i < currentRecipe.ingredients.length; i++) {
-                            var ingredients = currentRecipe.ingredients[i].text;
-                            $("#detail").append("<br>");
-                            $("#detail").append((i + 1) + ". " + ingredients);
-                        }   
-                        
+                        $("#detail").append((i + 1) + ". " + ingredients);
+                    }   
                 })
             });
         })
@@ -96,14 +99,17 @@ $(document).ready(function () {
     $("#run-search").on("click", function () {
         $('#myModal1').modal('hide');
     });
+
     //trigger next modal
     $("#run-search").on("click", function () {
         $('#exampleModalLong').modal('show');
     });
+
     $("#search").on("click", function () {
         $('#myModal1').modal('show');
         $('#exampleModalLong').modal('hide');
     });
+    
     function clear() {
         $("#food").empty();
         $('#myModal1').modal('hide');

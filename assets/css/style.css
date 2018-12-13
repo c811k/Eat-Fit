@@ -1,36 +1,40 @@
 *{
     position:relative;
 }
-body{
-/* background-image: url(../img/topography/topography.png); */
-/* background-image: url(../img/graphy/graphy.png); */
-/* background-image: url(../img/square_bg/square_bg.png); */
-font-family: 'Lato', sans-serif;
-font-weight: 300;
+body {
+    /* background-image: url(../img/topography/topography.png); */
+    /* background-image: url(../img/graphy/graphy.png); */
+    /* background-image: url(../img/square_bg/square_bg.png); */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 
-background: linear-gradient(270deg, #ffc7c7, #e7ffc7, #c7ffe2, #c7d7ff);
-background-size: 800% 800%;
+    background: linear-gradient(270deg, #ffc7c7, #e7ffc7, #c7ffe2, #c7d7ff);
+    background-size: 800% 800%;
 
--webkit-animation: AnimationName 30s ease infinite;
--moz-animation: AnimationName 30s ease infinite;
-animation: AnimationName 30s ease infinite;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
 }
+
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @-moz-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @keyframes AnimationName { 
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-h1{
+
+h1 {
     font-family: 'Abril Fatface', cursive;
     padding-top: 3%;
     background-color: rgb(223, 69, 82);
@@ -39,64 +43,74 @@ h1{
     margin: 0 auto;
     border-radius: 0px 0px 8px 8px;
 }
-h5{
+
+h5 {
     font-size: 1.750em;
     font-family: 'Abril Fatface', cursive; 
 }
-h6{
-    font-weight: 300;
 
+h6 {
+    font-weight: 300;
 }
-td{
+
+td {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 14px;
 }
-th{
+
+th {
     font-weight: 700;
     font-family: 'Abril Fatface', cursive;
 }
-img{
+
+img {
     border-radius: 50%;
     margin: 6% auto;
     display: block;
     
 }
-img:hover{
+
+img:hover {
     opacity: .5;
     cursor: pointer;
 }
 
-input[type="text"]{
+input[type="text"] {
     opacity: .7;
     text-align: center;
 }
-input[type="radio"]:checked{
+
+input[type="radio"]:checked {
     opacity: .7;
     width: 15px;
     height: 15px;
     background-color: rgb(233, 69, 82);
 }
-select{
+
+select {
     opacity: .7;
 }
 
-button{
+button {
     border: none;
     cursor: pointer;
 }
+
 button:focus {
     outline:none;
 }
-button:active{
-    outline: none;
-}
-button:visited{
-    outline: none;
-}
-/* Classes */
 
-.blue_button{
+button:active {
+    outline: none;
+}
+
+button:visited {
+    outline: none;
+}
+
+/* Classes */
+.blue_button {
     background-color: rgb(223, 69, 82);
     border-radius: 20px;
     color: #FFFFFF;
@@ -108,81 +122,75 @@ button:visited{
     transition: border-radius .5s, width .5s;
     display: block;
     border: none;
-    
-    
 }
 
-
-.blue_button:hover{
+.blue_button:hover {
     border-radius:0; 
    
 }
 
-.calculator{
-   
+.calculator {   
     margin: 0 auto;
 }
 
-.clicked{
-display:none;
+.clicked {
+    display:none;
 }
 
-.modal-footer{
+.modal-footer {
     border: none;
 }
 
-.tabla{
+.tabla {
     background-color:rgba(0, 0, 0, 0);
     border-color: none;
     color: #000;
     transition: .4s;
 }
 
-.tabla:hover{
-
+.tabla:hover {
     color: rgb(223, 69, 82);
 }
 
 /* ID's */
-
-#wrapper{
+#wrapper {
     width: 85%;
     margin: 0 auto;
-
 }
 
-
-#run-search{
+#run-search {
     color: rgb(223, 69, 82);
     width: 20%;
     margin: 0 auto;
 }
-#run-search:hover{
+
+#run-search:hover {
     opacity: .5;
 }
 
-#clear{
+#clear {
     width: 20%;
     margin: 0 auto;
     color: #000;
 }
-#clear:hover{
+
+#clear:hover {
     opacity: .5;
 }
-#food button:hover{
+
+#food button:hover {
     color: rgb(223, 69, 82);
 
 }
-#workout-save{
+
+#workout-save {
     margin: 0;
 }
 
-.workout{
+.workout {
     width: 100%;
-    display: inline;
-    
+    display: inline;  
 }
-.workout:hover{
+.workout:hover {
     color: rgb(223, 69, 82);
-
 }
