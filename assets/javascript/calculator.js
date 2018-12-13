@@ -1,6 +1,4 @@
 
-<!--Script by hscripts.com-->
-<!-- Free javascripts @ https://www.hscripts.com -->
 
 var cneed;
 var fneed;
@@ -262,14 +260,14 @@ else{
 $("#error").modal("show");
 }
 }
-// function chk(){
-// var sds = document.getElementById('dum');
-// if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");
-// document.getElementById("tab").style.visibility="hidden";
-// }
-// var sdss = document.getElementById("dumdiv");
-// if(sdss == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
-// }
+function chk(){
+var sds = document.getElementById('dum');
+if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");
+document.getElementById("tab").style.visibility="hidden";
+}
+var sdss = document.getElementById("dumdiv");
+if(sdss == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
+}
 
 
 $(".blue_button").on("click", function (){
