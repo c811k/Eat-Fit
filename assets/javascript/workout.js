@@ -70,7 +70,7 @@ $(".custom-select").on("change", function() {
             if(results[i].language === 2) {
                 var button = $("<button>")
                     .attr("type", "button")
-                    .addClass("btn btn-sm workout")
+                    .addClass("btn blue_button workout")
                     .attr("data-trigger", "hover")
                     .attr("title", results[i].name)
                     .attr("data-content", results[i].description)

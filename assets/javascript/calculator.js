@@ -145,7 +145,7 @@ document.getElementById("l4").innerHTML="kilogram";
 }
 }
 else{
-alert("Please fill your details properly!");
+    $("#error").modal("show");
 }
 }
 function con(num)
@@ -259,17 +259,17 @@ document.getElementById("l4").innerHTML="kilogram";
 }
 }
 else{
-$(".fill").html("Please fill your details properly!");
+$("#error").modal("show");
 }
 }
-function chk(){
-var sds = document.getElementById('dum');
-if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");
-document.getElementById("tab").style.visibility="hidden";
-}
-var sdss = document.getElementById("dumdiv");
-if(sdss == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
-}
+// function chk(){
+// var sds = document.getElementById('dum');
+// if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");
+// document.getElementById("tab").style.visibility="hidden";
+// }
+// var sdss = document.getElementById("dumdiv");
+// if(sdss == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
+// }
 
 
 $(".blue_button").on("click", function (){

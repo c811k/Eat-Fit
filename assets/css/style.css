@@ -73,6 +73,8 @@ input[type="text"]{
 }
 input[type="radio"]:checked{
     opacity: .7;
+    width: 15px;
+    height: 15px;
     background-color: rgb(233, 69, 82);
 }
 select{
@@ -85,6 +87,12 @@ button{
 }
 button:focus {
     outline:none;
+}
+button:active{
+    outline: none;
+}
+button:visited{
+    outline: none;
 }
 /* Classes */
 

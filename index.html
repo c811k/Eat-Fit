@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="icon" href="https://static.thenounproject.com/png/1294169-200.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/medicons-3/550/apple-health-512.png" type="image/gif" sizes="16x16">
 
 
     <!-- bootstrap -->
@@ -102,16 +102,14 @@
                                 </td>
                                 <td><input type="text" name="age" id="age" align="left" size="3" maxlength="2"
                                         onkeypress="return cknum(event,age)"></td>
-                                <td>
-                                    <font color="#3D366F" size="2">years</font>
-                                </td>
+                                
                             </tr>
                             <tr>
                                 <td style="color: #3D366F; font-size:13px;">Gender:</td>
                                 <td><input type="radio" name="gen" id="gen" checked>
-                                    <font color="#3D366F" size="1">Male</font>
+                                    <font color="#3D366F" size="2">Male</font>
                                     <input type="radio" name="gen" id="gen">
-                                    <font color="#3D366F" size="1">Female</font>
+                                    <font color="#3D366F" size="2">Female</font>
                                 </td>
                             </tr>
                             <tr>
@@ -161,7 +159,7 @@
                                     </select></td>
                             </tr>
                             <tr>
-                                <td colspan='2' align="center"><input class='blue_button' id="start" type="button"
+                                <td colspan='2' align="center"><input data-toggle="modal" data-target=".bd-example-modal-sm" class='blue_button' id="start" type="button"
                                         value="Calculate" onclick="cc()" style="left: 20%;"><span id="dumdiv" align="center" style="font-size:10px;color:#dadada;"><a
                                             id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;"
                                             href="https://www.hscripts.com"></a></span></td>
@@ -281,7 +279,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                <button data-day="monday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>
+                                <button data-day="monday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -297,7 +295,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                 <button  data-day="tuesday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
+                                 <button  data-day="tuesday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -313,7 +311,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                 <button  data-day="wednesday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
+                                 <button  data-day="wednesday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -329,7 +327,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                <button  data-day="thursday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>    
+                                <button  data-day="thursday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>    
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -345,7 +343,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                 <button  data-day="friday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
+                                 <button  data-day="friday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -361,7 +359,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                 <button  data-day="saturday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
+                                 <button  data-day="saturday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                         <td><div class="form-group">
                                 <label for="form-select"></label>
@@ -377,7 +375,7 @@
                                 </select>
                             </div>
                             <div class="workout-button">
-                                 <button  data-day="sunday" type="button"  class="btn btn-info btn-sm workout-category" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
+                                 <button  data-day="sunday" type="button"  class="btn btn-info btn-sm workout-category blue_button" data-toggle="modal" data-target="#workout-modal">Add workout</button>   
                             </div></td>
                     </tr>
                     <tr>
@@ -413,6 +411,26 @@
         </div>
     </div>
     
+    <!-- form error modal -->
+    <div class="modal" id="error" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Error</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Fill in the information properly</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         
     <!-- javascript jQuery -->
 
