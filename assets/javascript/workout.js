@@ -1,8 +1,3 @@
-$(function () {
-    $('[data-toggle="popover"]').popover()
-  
-})
-
 var select;
 var isEmpty = true;
 var workout = $('.btn btn-info btn-sm').click(function() {
@@ -55,8 +50,8 @@ $(".workout-category").click(function(){
 
 $(".custom-select").on("change", function() {
     var category = $(this).val();
-    // console.log(this);
-    // console.log(category);
+    console.log(this);
+    console.log(category);
     var queryURL = "https://wger.de/api/v2/exercise/?category=" + category + "&status=2";
     
     $.ajax ({
@@ -65,7 +60,7 @@ $(".custom-select").on("change", function() {
     }).then(function(response) {
         $("#workout-body").empty();
         var results = response.results;
-        // console.log(results);
+        console.log(results);
         for(var i =0; i <results.length; i++) {
             if(results[i].language === 2) {
                 var button = $("<button>")
@@ -80,9 +75,11 @@ $(".custom-select").on("change", function() {
             }                
         }
 
-        $(".btn.btn-sm.btn-outline-secondary.btn-block").on("click", function() {
+        // $(".btn.btn-sm.btn-outline-secondary.btn-block").on("click", function() {
+            $(".btn.blue_button.workout").on("click", function() {
             var type = $(this).text();
             currentSelectedType = type;
+            console.log(currentSelectedType);
             $("#workout-save").on("click", function() {
                 console.log("pre", myWorkouts);
                 myWorkouts[currentSelectedDay].unshift(currentSelectedType);
